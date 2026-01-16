@@ -67,9 +67,11 @@ const ProjectPresentation = () => {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-lg p-6 border border-white/20">
-                  <h3 className="text-xl font-bold text-yellow-400 mb-4">🎯 ما هو Police Ops؟</h3>
-                  <p className="text-lg leading-relaxed">
-                    نظام إدارة عمليات الشرطة الفلسطينية (Police Ops) هو <strong className="text-yellow-400">أول نظام رقمي شامل ومتكامل</strong> مصمم خصيصاً لتحويل العمليات الأمنية من النظام الورقي التقليدي إلى نظام إلكتروني ذكي وآمن.
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">🎯 Police Ops ما هو </h3>
+                  <p className="text-lg leading-relaxed">نظام إدارة عمليات الشرطة الفلسطينية (Police Ops) هو 
+<strong className="text-yellow-400">أول نظام رقمي شامل ومتكامل</strong>،
+صُمّم خصيصاً لنقل العمليات الأمنية من الأسلوب الورقي التقليدي
+إلى نظام إلكتروني ذكي وآمن.
                   </p>
                 </div>
 
@@ -455,7 +457,7 @@ const ProjectPresentation = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-semibold text-yellow-400 mb-2">IDE:</h4>
-                      <p>Visual Studio Code + Lovable Platform</p>
+                      <p>Visual Studio Code </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-yellow-400 mb-2">Version Control:</h4>
@@ -576,47 +578,46 @@ const ProjectPresentation = () => {
               </CardHeader>
               <CardContent>
                 <Accordion type="single" collapsible className="space-y-3">
-                  {[
-                    {
-                      q: 'لماذا اخترت React بدلاً من Angular أو Vue؟',
-                      a: 'اخترت React لعدة أسباب: (1) أكبر مجتمع مطورين ودعم مستمر من Meta، (2) Component-based Architecture يسهل إعادة الاستخدام، (3) Virtual DOM يحسن الأداء، (4) توافق ممتاز مع TypeScript، (5) توفر مكتبات غنية مثل Shadcn/UI وTanStack Query.'
-                    },
-                    {
-                      q: 'كيف تضمن أمان البيانات الحساسة في النظام؟',
-                      a: 'نستخدم نهج Defense in Depth: (1) تشفير HTTPS لجميع الاتصالات، (2) Row Level Security في PostgreSQL، (3) JWT Tokens مع انتهاء صلاحية، (4) بصمة الجهاز لمنع الوصول غير المصرح، (5) التحقق الجغرافي، (6) تشفير بصمات الوجه قبل التخزين.'
-                    },
-                    {
-                      q: 'اشرح آلية عمل التعرف على الوجه (Face Recognition)؟',
-                      a: 'نستخدم face-api.js المبني على TensorFlow.js: (1) تحميل نماذج SSD MobileNet، (2) اكتشاف الوجه في الصورة، (3) استخراج 128 قيمة عددية (Face Embedding)، (4) تخزين المتجه في PostgreSQL مع pgvector، (5) عند البحث نحسب Cosine Similarity بين المتجهات، (6) نتائج بنسبة تشابه ≥60% تعتبر مطابقة.'
-                    },
-                    {
-                      q: 'ما الفرق بين Edge Functions والـ Backend التقليدي؟',
-                      a: 'Edge Functions تعمل على الحافة (Edge) قريباً من المستخدم: (1) Serverless - لا حاجة لإدارة خوادم، (2) Auto-scaling تلقائي، (3) تكلفة أقل - تدفع فقط عند الاستخدام، (4) Cold Start أسرع مع Deno، (5) نشر فوري. العيب: وقت تنفيذ محدود (عادة 30-60 ثانية).'
-                    },
-                    {
-                      q: 'كيف يتم تحديث البيانات بشكل فوري (Real-time)؟',
-                      a: 'نستخدم Supabase Realtime المبني على Phoenix Channels: (1) المستخدم يشترك في جدول معين، (2) عند أي تغيير (INSERT/UPDATE/DELETE)، (3) Supabase يرسل إشعار WebSocket، (4) React Query يحدث الـ Cache تلقائياً، (5) الواجهة تتحدث بدون إعادة تحميل.'
-                    },
-                    {
-                      q: 'كيف يعمل التحقق من موقع تسجيل الدخول؟',
-                      a: 'عملية verify-login-location: (1) نأخذ إحداثيات GPS من المتصفح، (2) نرسلها لـ Edge Function، (3) نحسب المسافة باستخدام Haversine Formula، (4) نقارن مع المواقع المسموحة في الـ Database، (5) إذا المسافة > الحد المسموح نرفض الدخول.'
-                    },
-                    {
-                      q: 'ما هي Row Level Security (RLS) وكيف تعمل؟',
-                      a: 'RLS هي ميزة في PostgreSQL تطبق سياسات أمان على مستوى الصف: (1) نعرف POLICY لكل جدول، (2) نحدد شروط الوصول باستخدام SQL، (3) auth.uid() تعطينا هوية المستخدم الحالي، (4) كل استعلام يمر بفلتر RLS تلقائياً، (5) حتى لو حاول المهاجم SQL Injection، لن يرى إلا بياناته.'
-                    },
-                    {
-                      q: 'لماذا TypeScript بدلاً من JavaScript العادي؟',
-                      a: 'TypeScript يوفر: (1) Static Type Checking يكتشف الأخطاء قبل التشغيل، (2) IntelliSense أفضل في VS Code، (3) Refactoring آمن، (4) توثيق ذاتي للكود، (5) دعم أفضل للـ OOP، (6) تكامل ممتاز مع React وSupabase.'
-                    },
-                    {
-                      q: 'كيف تم نشر (Deploy) المشروع؟',
-                      a: 'نستخدم Lovable Platform: (1) Frontend يُنشر على CDN عالمي، (2) Edge Functions تُنشر على Supabase، (3) Database مُدارة على Supabase، (4) CI/CD تلقائي عند كل تغيير، (5) HTTPS مجاني، (6) Custom Domain متاح.'
-                    },
-                    {
-                      q: 'ما هي التحديات التي واجهتها وكيف تغلبت عليها؟',
-                      a: 'أبرز التحديات: (1) دقة التعرف على الوجه - حُلت بتجربة عتبات مختلفة ووصلنا لـ 60%، (2) أداء الخرائط - استخدمنا Mapbox بدل Google Maps، (3) أمان متعدد الطبقات - صممنا نظام Device Fingerprint + Geo-verification، (4) RTL Support - Tailwind CSS سهّل الأمر.'
-                    },
+                  {[{
+  q: 'لماذا اخترت React بدلاً من Angular أو Vue؟',
+  a: 'اخترت React لعدة أسباب واضحة: (1) يمتلك أكبر مجتمع مطورين مع دعم مستمر من شركة Meta، (2) يعتمد على Component-based Architecture مما يسهل إعادة استخدام المكونات، (3) استخدام Virtual DOM يساهم في تحسين الأداء، (4) توافق ممتاز مع TypeScript، (5) توفر مكتبات قوية مثل Shadcn/UI و TanStack Query.'
+},
+{
+  q: 'كيف تضمن أمان البيانات الحساسة في النظام؟',
+  a: 'نعتمد نهج Defense in Depth عبر عدة طبقات أمان: (1) تشفير HTTPS لجميع الاتصالات، (2) تفعيل Row Level Security في قاعدة بيانات PostgreSQL، (3) استخدام JWT Tokens مع صلاحية زمنية محددة، (4) الاعتماد على Device Fingerprint لمنع الوصول غير المصرح، (5) التحقق الجغرافي من موقع المستخدم، (6) تشفير بيانات التعرف على الوجه قبل التخزين.'
+},
+{
+  q: 'اشرح آلية عمل نظام التعرف على الوجه (Face Recognition)؟',
+  a: 'يعمل النظام باستخدام مكتبة face-api.js المبنية على TensorFlow.js وفق الخطوات التالية: (1) تحميل نماذج SSD MobileNet، (2) اكتشاف الوجه داخل الصورة، (3) استخراج 128 قيمة رقمية تمثل Face Embedding، (4) تخزين المتجه داخل PostgreSQL باستخدام امتداد pgvector، (5) عند البحث يتم حساب Cosine Similarity بين المتجهات، (6) تعتبر النتيجة مطابقة إذا تجاوزت نسبة التشابه 60%.'
+},
+{
+  q: 'ما الفرق بين Edge Functions والـ Backend التقليدي؟',
+  a: 'تعمل Edge Functions على الحافة (Edge) بالقرب من المستخدم، وتتميز بـ: (1) كونها Serverless دون الحاجة لإدارة خوادم، (2) Auto-scaling تلقائي حسب عدد الطلبات، (3) تكلفة أقل حيث يتم الدفع حسب الاستخدام، (4) Cold Start أسرع باستخدام Deno، (5) نشر فوري للتحديثات. من عيوبها أن زمن التنفيذ محدود غالباً بين 30 إلى 60 ثانية.'
+},
+{
+  q: 'كيف يتم تحديث البيانات بشكل فوري (Real-time)؟',
+  a: 'يتم ذلك باستخدام Supabase Realtime المبني على Phoenix Channels: (1) يشترك المستخدم في جدول معين، (2) عند حدوث أي عملية INSERT أو UPDATE أو DELETE، (3) يرسل Supabase إشعاراً فورياً عبر WebSocket، (4) تقوم React Query بتحديث الـ Cache تلقائياً، (5) يتم تحديث الواجهة مباشرة دون الحاجة لإعادة تحميل الصفحة.'
+},
+{
+  q: 'كيف يعمل التحقق من موقع تسجيل الدخول؟',
+  a: 'تتم عملية verify-login-location كالتالي: (1) يتم الحصول على إحداثيات GPS من المتصفح، (2) إرسال الإحداثيات إلى Edge Function، (3) حساب المسافة باستخدام Haversine Formula، (4) مقارنة الموقع مع المواقع المسموحة المخزنة في قاعدة البيانات، (5) في حال تجاوز المسافة الحد المسموح يتم رفض تسجيل الدخول.'
+},
+{
+  q: 'ما هي Row Level Security (RLS) وكيف تعمل؟',
+  a: 'RLS هي ميزة أمان في PostgreSQL تطبق سياسات وصول على مستوى الصف الواحد: (1) يتم تعريف Policy لكل جدول، (2) تحديد شروط الوصول باستخدام SQL، (3) الدالة auth.uid() تحدد هوية المستخدم الحالي، (4) كل استعلام يمر تلقائياً عبر فلتر RLS، (5) حتى في حال وجود SQL Injection فلن يتمكن المهاجم من رؤية إلا بياناته فقط.'
+},
+{
+  q: 'لماذا اخترت TypeScript بدلاً من JavaScript العادي؟',
+  a: 'يوفر TypeScript مزايا مهمة منها: (1) Static Type Checking لاكتشاف الأخطاء قبل التشغيل، (2) IntelliSense أفضل داخل VS Code، (3) Refactoring آمن، (4) كود أوضح ويعمل كتوثيق ذاتي، (5) دعم أفضل لمفاهيم OOP، (6) تكامل قوي مع React و Supabase.'
+},
+{
+  q: 'كيف تم نشر (Deploy) المشروع؟',
+  a: 'تم نشر المشروع باستخدام Lovable Platform وفق الآتي: (1) نشر الواجهة الأمامية على CDN عالمي، (2) نشر Edge Functions عبر Supabase، (3) إدارة قاعدة البيانات على Supabase، (4) تفعيل CI/CD تلقائي عند كل تحديث، (5) توفير HTTPS مجاني، (6) إمكانية ربط Custom Domain.'
+},
+{
+  q: 'ما هي التحديات التي واجهتك وكيف تغلبت عليها؟',
+  a: 'من أبرز التحديات: (1) دقة التعرف على الوجه، وتم حلها عبر اختبار عتبات متعددة والوصول إلى نسبة 60%، (2) أداء الخرائط، حيث تم استخدام Mapbox بدلاً من Google Maps، (3) بناء نظام أمان متعدد الطبقات باستخدام Device Fingerprint والتحقق الجغرافي، (4) دعم RTL، وقد سهّل Tailwind CSS هذه المهمة بشكل كبير.'
+},
                   ].map((item, i) => (
                     <AccordionItem key={i} value={`q-${i}`} className="bg-white/5 rounded-lg border border-white/10 px-4">
                       <AccordionTrigger className="text-right hover:no-underline">
